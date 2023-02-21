@@ -1,16 +1,25 @@
 {
   "name": "goose-puppet",
-  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/geronimosua/goose-puppet.git"
+  },
+  "version": "1.0.7",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "module": "lib/index.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "npx tsc",
-    "start": "node dist/index.js",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
+    "start": "node lib/index.js",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q lib/index.js\""
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^18.14.0",
     "concurrently": "^7.6.0",

@@ -1,11 +1,16 @@
-import goosePuppet from "./src";
+import {
+  launch,
+  evaluateDeviceInfo,
+  evaluateIpLeak,
+  evaluateTor,
+} from "./src/index";
 
 const main = async () => {
-  const page = await goosePuppet.launch();
+  const [browser, page] = await launch();
 
-  await goosePuppet.evaluateTor(page);
-  await goosePuppet.evaluateIpLeak(page);
-  await goosePuppet.evaluateDeviceInfo(page);
+  await evaluateTor(page);
+  await evaluateIpLeak(page);
+  await evaluateDeviceInfo(page);
 };
 
 main();
